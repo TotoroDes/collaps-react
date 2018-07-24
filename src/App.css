@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color: transparent;
+  height: auto;
+  padding: 20px;
+  color: #009688;
+  font-family: cursive;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.Collapsible {
+  width: 450px;
+  margin: 0 auto;
+  color: #fff;
+  background: #aba9a9;
+  font-family: cursive;
+  cursor: pointer;
+}
+
+span.Collapsible__trigger {
+  display: block;
+  width: 100%;
+  background: crimson;
+  padding: 0.25rem 0;
+  border: 1px solid #960e29;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
