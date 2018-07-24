@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Collapsible from 'react-collapsible';
 import Slider from "react-slick";
-import Select from 'react-select';
+import Select from "react-select";
 
 const options = [
     { value: 'panda', label: 'Panda' },
@@ -60,7 +60,14 @@ class App extends Component {
       <Collapsible trigger="There is the third block">
           <p>This is the collapsible content. It can be any element or React component you like.</p>
       </Collapsible>
+              <Select
+                  defaultValue={options[0]}
+                  value={selectedOption}
+                  onChange={this.handleChange}
+                  options={options}
+              />
       </div>
+
     );
   }
 }
