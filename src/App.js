@@ -2,17 +2,32 @@ import React, { Component } from 'react';
 import './App.css';
 import Collapsible from 'react-collapsible';
 import Slider from "react-slick";
+import Select from 'react-select';
 
+const options = [
+    { value: 'panda', label: 'Panda' },
+    { value: 'cat', label: 'Cat' },
+    { value: 'dog', label: 'Dog' },
+    { value: 'raccoon', label: 'Raccoon' },
+    { value: 'ferret', label: 'Ferret' }
+];
 
 class App extends Component {
+    state = {
+        selectedOption: null,
+    };
+    handleChange = (selectedOption) => {
+        this.setState({ selectedOption });
+        console.log(`You selected:`, selectedOption);
+    };
   render() {
+      const { selectedOption } = this.state;
     return (
-      <div className="App">
+          <div className="App">
         <header className="App-header">
           <h1 className="App-title">My first stuff on react</h1>
         </header>
           <Collapsible trigger="Slider">
-
               <Slider>
               <div>
                   <img src="https://data.whicdn.com/images/51590922/original.jpg" alt=""/>
@@ -34,8 +49,13 @@ class App extends Component {
               </div>
           </Slider>
       </Collapsible>
-      <Collapsible trigger="There is the second block">
-          <p>This is the collapsible content. It can be any element or React component you like.</p>
+      <Collapsible trigger="Make your choice">
+          <Select
+              defaultValue={options[0]}
+              value={selectedOption}
+              onChange={this.handleChange}
+              options={options}
+          />
       </Collapsible>
       <Collapsible trigger="There is the third block">
           <p>This is the collapsible content. It can be any element or React component you like.</p>
