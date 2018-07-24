@@ -4,6 +4,7 @@ import Collapsible from 'react-collapsible';
 import Slider from "react-slick";
 import Select from "react-select";
 
+
 const options = [
     { value: 'panda', label: 'Panda' },
     { value: 'cat', label: 'Cat' },
@@ -52,7 +53,7 @@ class App extends Component {
       <Collapsible trigger="Make your choice">
           <Select
               defaultValue={options[0]}
-              value={selectedOption}
+              value={this.selectedOption}
               onChange={this.handleChange}
               options={options}
           />
@@ -62,7 +63,7 @@ class App extends Component {
       </Collapsible>
               <Select
                   defaultValue={options[0]}
-                  value={selectedOption}
+                  value={this.selectedOption}
                   onChange={this.handleChange}
                   options={options}
               />
